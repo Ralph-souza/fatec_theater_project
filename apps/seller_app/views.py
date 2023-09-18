@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
+
+class TicketRegisterTemplateView(TemplateView):
+    template_name = 'ticket_register.html'
+
+    def ticket_register(self, request):
+        return render(request, 'ticket_register.html')

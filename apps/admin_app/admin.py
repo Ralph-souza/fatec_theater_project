@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from apps.admin_app.models import MoviesModel, RoomsModel, TeathersModel
+
+
+admin.site.register(MoviesModel)
+admin.site.register(RoomsModel)
+admin.site.register(TeathersModel)

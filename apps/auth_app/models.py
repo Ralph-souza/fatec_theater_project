@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class AdminUserAuth(models.Model):
+class AdminUserAuthModel(models.Model):
     username = models.CharField(max_length=50, unique=True, blank=False, null=False)
     password = models.CharField(max_length=50, blank=False, null=False)
     email = models.EmailField()
@@ -15,7 +15,7 @@ class AdminUserAuth(models.Model):
         return self.username
 
 
-class SellerUserAuth(models.Model):
+class SellerUserAuthModel(models.Model):
     username = models.CharField(max_length=50, unique=True, blank=False, null=False)
     password = models.CharField(max_length=50, blank=False, null=False)
 
