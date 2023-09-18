@@ -16,8 +16,8 @@ class RoomsRegisterTemplateView(TemplateView):
         return render(request, 'rooms_register.html')
 
 
-class TeathersRegisterTemplateView(TemplateView):
-    template_name = 'teathers_register.html'
+class TheatersRegisterTemplateView(TemplateView):
+    template_name = 'theaters_register.html'
 
-    def teathers_register(self, request):
-        return render(request, 'teathers_register.html')
+    def theaters_register(self, request):
+        return render(request, 'theaters_register.html')

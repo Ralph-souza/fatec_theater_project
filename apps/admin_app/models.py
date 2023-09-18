@@ -36,7 +36,7 @@ class RoomsModel(models.Model):
         return self.name
 
 
-class TeathersModel(models.Model):
+class TheatersModel(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
     name = models.CharField(max_length=100, blank=False, null=False)
     location = models.CharField(max_length=100, blank=False, null=False)
