@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='TeathersModel',
+            name='TheatersModel',
             fields=[
                 ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
                 ('name', models.CharField(max_length=100)),

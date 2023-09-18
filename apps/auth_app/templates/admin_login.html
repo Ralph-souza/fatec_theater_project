@@ -2,9 +2,14 @@
     <head>
 
     <body>
-        <form>
-            <input type="text" placeholder="Digite o seu usuário: " name="username"></br>
-            <input type="email" pace>
+        <form action="{% url 'admin_login' %}" method="GET">{% csrf_token %}
+            <label for="name">User</label><br>
+            <input type="text" id="name" name="username" placeholder="Enter your username: " ><br>
+
+            <label for="password">Password</label><br>
+            <input type="text" id="password" name="password" placeholder="Enter your password"><br>
+
+            <input type="submit" value="LogIn">
         </form>
     </body>
 

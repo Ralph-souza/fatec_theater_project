@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('movie', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='admin_app.moviesmodel')),
                 ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='admin_app.roomsmodel')),
-                ('teather', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='admin_app.teathersmodel')),
+                ('theater', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='admin_app.theatersmodel')),
             ],
             options={
                 'verbose_name': 'Ticket',
