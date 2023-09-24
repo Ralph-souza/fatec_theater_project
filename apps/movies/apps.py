@@ -1,0 +1,10 @@
+from django.apps import AppConfig
+
+
+class MoviesConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'apps.movies'
+
+
+class CoreConfig(AppConfig):
+    name = 'apps.movies'

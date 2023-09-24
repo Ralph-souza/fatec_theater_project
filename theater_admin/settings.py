@@ -31,9 +31,10 @@ INSTALLED_APPS = [
     'django_extensions',
 
     # apps
-    'apps.auth_app',
-    'apps.admin_app',
-    'apps.seller_app',
+    'apps.account',
+    'apps.personnel',
+    'apps.movies',
+    'apps.sales',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,8 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTH_USER_MODEL = 'account.Account'
 
 WSGI_APPLICATION = 'theater_admin.wsgi.application'
 
