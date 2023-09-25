@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>FATEC`s Movie Theater</title>
+
+    {% if request.user.is_authenticated %}
+
+        <p>Hello, {{ request.user.username }} | <a href="{% url 'logout' %}">Logout</a></p>
+        {% else %}
+            <p>
+                <a href="{% url 'register' %}">Register</a> |
+                <a href="{% url 'login' %}">Login</a>
+            </p>
+    {% endif %}
+
 </head>
 <body>
-    <h1>Welcome</h1>
+    {% block content %}
+    {% endblock %}
 </body>
 <footer>
-    <p>All rights reserved to: &copy;, 2023</p>
+    <p>All rights reserved to: FATEC Jundiaí GTI course group&copy;, 2023</p>
 </footer>
 </html>
