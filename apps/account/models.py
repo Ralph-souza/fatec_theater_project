@@ -47,6 +47,11 @@ class Account(AbstractBaseUser):
 
     objects = AccountManager()
 
+    class Meta:
+        verbose_name = "Account"
+        verbose_name_plural = "Accounts"
+        ordering = ["-date_joined"]
+
     def __str__(self):
         return self.email
 

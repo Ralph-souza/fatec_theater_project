@@ -11,6 +11,7 @@ class MoviesModel(models.Model):
     duration = models.CharField(max_length=100, blank=False, null=False)
     category = models.CharField(choices=CategoryChoices.choices, max_length=50, blank=False, null=False)
     rating = models.IntegerField(blank=False, null=False)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Movie Name'
@@ -26,6 +27,7 @@ class RoomsModel(models.Model):
     name = models.CharField(choices=RoomsChoices.choices, max_length=100, blank=False, null=False)
     seats = models.IntegerField(blank=False, null=False)
     three_d = models.BooleanField(blank=False, null=False)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Available Room'
@@ -42,6 +44,7 @@ class TheatersModel(models.Model):
     location = models.CharField(max_length=100, blank=False, null=False)
     titles = models.ForeignKey("movies.MoviesModel", on_delete=models.CASCADE)
     rooms = models.ForeignKey("movies.RoomsModel", on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Available Theater'
