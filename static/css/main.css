@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.register-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    border-radius: 10px;
+    margin: 100px 0;
+    padding: 50px;
+    height: 100%;
+}
+
+.register-content h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    color: #205067;
+    margin-bottom: 50px;
+}
+
+.register-content form label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    color: #205067;
+}
+
+.register-content form input {
+    border: none;
+    border-radius: 8px;
+}
+
+.register-content form input:focus {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.register-content button {
+    border: 2px solid #205067;
+    border-radius: 50px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: #205067;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: .2s ease-in-out 0s;
+}
+
+.register-content button:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+    background-color: #205067;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.login-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    border-radius: 10px;
+    margin: 100px 0;
+    padding: 50px;
+}
+
+.login-content h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #205067;
+}
+
+.login-content form label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #205067;
+}
+
+.login-content p {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.login-content form input {
+    border: none;
+    border-radius: 8px;
+}
+
+.login-content form input:focus {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.login-content button {
+    border: 2px solid #205067;
+    border-radius: 50px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: #205067;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: .2s ease-in-out 0s;
+}
+
+.login-content button:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+    background-color: #205067;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
