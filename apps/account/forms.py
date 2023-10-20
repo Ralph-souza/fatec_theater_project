@@ -8,8 +8,8 @@ from apps.account.models import Account
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(max_length=100, label="E-mail")
     username = forms.CharField(max_length=100, label="User")
-    password1 = forms.CharField(max_length=100, label="Password")
-    password2 = forms.CharField(max_length=100, label="Password confirmation")
+    password1 = forms.CharField(max_length=100, label="Password", widget=forms.PasswordInput(attrs={"class": "secret"}))
+    password2 = forms.CharField(max_length=100, label="Password confirmation", widget=forms.PasswordInput(attrs={"class": "secret"}))
 
     class Meta:
         model = Account
