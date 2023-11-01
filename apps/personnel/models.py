@@ -2,11 +2,18 @@ from django.db import models
 
 from apps.personnel.choices import RoleChoices
 
+from apps.account.models import Account
+
 
 class ManagerModel(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
     name = models.CharField(max_length=100, blank=False, null=False)
-    email = models.ForeignKey("account.Account", related_name="manager_email", on_delete=models.CASCADE)
+    email = models.ForeignKey(
+        Account,
+        to_field="email",
+        related_name="manager_email",
+        on_delete=models.CASCADE
+    )
     role = models.CharField(
         choices=RoleChoices.choices,
         max_length=20,
@@ -29,7 +36,12 @@ class ManagerModel(models.Model):
 class StaffModel(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
     name = models.CharField(max_length=100, blank=False, null=False)
-    email = models.ForeignKey("account.Account", related_name="staff_email", on_delete=models.CASCADE)
+    email = models.ForeignKey(
+        Account,
+        to_field="email",
+        related_name="staff_email",
+        on_delete=models.CASCADE
+    )
     role = models.CharField(
         choices=RoleChoices.choices,
         max_length=20,
@@ -47,4 +59,3 @@ class StaffModel(models.Model):
 
     def __str__(self):
         return self.name
-

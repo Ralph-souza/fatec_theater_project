@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="profile-content">
+        <h2>Create profile</h2>
+        <form method="post">
+            {% csrf_token %}
+
+            <label for="role">Select your role:</label>
+            <select name="role" id="role">
+                <option value="manager">Manager</option>
+                <option value="staff">Staff</option>
+            </select>
+
+            <br>
+
+            {% if profile_form %}
+                {{ profile_form.as_p }}
+            {% else %}
+                {% if manager_form %}
+                    {{ manager_form.as_p }}
+                {% elif staff_form %}
+                    {{ staff_form.as_p }}
+                {% endif %}
+            {% endif %}
+
+            <div class="btn-primary">
+                <button type="submit">Create</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

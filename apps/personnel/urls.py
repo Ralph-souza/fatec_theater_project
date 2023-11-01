@@ -1,8 +1,8 @@
 from django.urls import path
 
-from apps.personnel.views import manager_view
+from apps.personnel.views import profile_view
 
 
 urlpatterns = [
-    path('manager/', manager_view, name="manager")
+    path('profile/', profile_view, name='profile'),
 ]
