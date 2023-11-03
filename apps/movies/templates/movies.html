@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="movies-content">
+        <h2>Add movies</h2>
+        <form method="post">
+            {% csrf_token %}
+
+            {{ movie_form.as_p }}
+            <label for="category">Select the movie category:</label>
+            <select name="category" id="category">
+                <option value="horror">Horror</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="thriller">Thriller</option>
+            </select>
+
+            {{ theater_form.as_p }}
+            {{ room_form.as_p }}
+
+            <div class="btn-primary">
+                <button type="submit">Add movie</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

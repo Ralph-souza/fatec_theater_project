@@ -24,7 +24,7 @@ class RoomsForm(forms.ModelForm):
         fields = ("seats", "three_d")
 
 
-class TheatersForms(forms.ModelForm):
+class TheatersForm(forms.ModelForm):
     name = forms.CharField(max_length=100, label="Theater Name")
     locations = forms.CharField(max_length=100, label="Location")
 
