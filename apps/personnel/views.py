@@ -29,7 +29,10 @@ def profile_view(request):
                 profile.email = user
                 profile.is_admin = is_admin
                 profile.save()
-            return redirect("login")
+                if role == "manager":
+                    return redirect("movies")
+                else:
+                    return redirect("sales")
 
         context["profile_form"] = form
     else:
