@@ -1,4 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="added-movie-content">
+        <h2>Congrats! Your movie has been added.</h2>
+        {% csrf_token %}
+        <div>
+            <a href="{% url 'movies' %}">Add new movie</a>
+        </div>
+    </div>
 {% endblock %}

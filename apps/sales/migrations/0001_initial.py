@@ -6,24 +6,39 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-        ('movies', '0001_initial'),
-    ]
+    dependencies = [("movies", "0001_initial")]
 
     operations = [
         migrations.CreateModel(
-            name='SalesModel',
+            name="SalesModel",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('movie', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='movies_title', to='movies.moviesmodel')),
-                ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='rooms_name', to='movies.roomsmodel')),
+                (
+                    "id",
+                    models.AutoField(primary_key=True, serialize=False, unique=True),
+                ),
+                ("price", models.DecimalField(decimal_places=2, max_digits=10)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                (
+                    "movie",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="movies_title",
+                        to="movies.moviesmodel",
+                    ),
+                ),
+                (
+                    "room",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="rooms_name",
+                        to="movies.roomsmodel",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Ticket',
-                'verbose_name_plural': 'Sales',
-                'ordering': ['-created_at'],
+                "verbose_name": "Ticket",
+                "verbose_name_plural": "Sales",
+                "ordering": ["-created_at"],
             },
-        ),
+        )
     ]
