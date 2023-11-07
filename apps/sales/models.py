@@ -1,11 +1,12 @@
 from django.db import models
 
+from apps.movies.models import MoviesModel, RoomsModel
+
 
 class SalesModel(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
-    movie = models.ForeignKey('movies.MoviesModel', on_delete=models.CASCADE)
-    room = models.ForeignKey('movies.RoomsModel', on_delete=models.CASCADE)
-    theater = models.ForeignKey('movies.TheatersModel', on_delete=models.CASCADE)
+    movie = models.ForeignKey(MoviesModel, related_name="movies_title", on_delete=models.CASCADE)
+    room = models.ForeignKey(RoomsModel, related_name="rooms_name", on_delete=models.CASCADE)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     created_at = models.DateTimeField(auto_now_add=True)
 

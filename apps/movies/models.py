@@ -26,29 +26,12 @@ class RoomsModel(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
     name = models.CharField(choices=RoomsChoices.choices, max_length=100, blank=False, null=False)
     seats = models.IntegerField(blank=False, null=False)
-    three_d = models.BooleanField(blank=False, null=False)
+    price = models.DecimalField(max_digits=10, decimal_places=2, blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Available Room'
         verbose_name_plural = 'Rooms'
-        ordering = ['id']
-
-    def __str__(self):
-        return self.name
-
-
-class TheatersModel(models.Model):
-    id = models.AutoField(primary_key=True, unique=True)
-    name = models.CharField(max_length=100, blank=False, null=False)
-    location = models.CharField(max_length=100, blank=False, null=False)
-    titles = models.ForeignKey("movies.MoviesModel", on_delete=models.CASCADE)
-    rooms = models.ForeignKey("movies.RoomsModel", on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name = 'Available Theater'
-        verbose_name_plural = 'Theaters'
         ordering = ['id']
 
     def __str__(self):

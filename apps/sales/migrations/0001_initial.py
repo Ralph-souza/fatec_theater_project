@@ -17,9 +17,8 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
                 ('price', models.DecimalField(decimal_places=2, max_digits=10)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('movie', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='movies.moviesmodel')),
-                ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='movies.roomsmodel')),
-                ('theater', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='movies.theatersmodel')),
+                ('movie', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='movies_title', to='movies.moviesmodel')),
+                ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='rooms_name', to='movies.roomsmodel')),
             ],
             options={
                 'verbose_name': 'Ticket',

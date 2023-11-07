@@ -1,6 +1,6 @@
 from django import forms
 
-from apps.movies.models import MoviesModel, RoomsModel, TheatersModel
+from apps.movies.models import MoviesModel, RoomsModel
 
 
 class MoviesForm(forms.ModelForm):
@@ -12,22 +12,14 @@ class MoviesForm(forms.ModelForm):
 
     class Meta:
         model = MoviesModel
-        fields = ("title", "director", "casting", "duration", "rating")
+        fields = ("title", "director", "casting", "duration", "category", "rating")
 
 
 class RoomsForm(forms.ModelForm):
+    name = forms.CharField(label="Room")
     seats = forms.IntegerField(label="Seats")
-    three_d = forms.BooleanField(label="3D")
+    price = forms.DecimalField(max_digits=10, decimal_places=2)
 
     class Meta:
         model = RoomsModel
-        fields = ("seats", "three_d")
-
-
-class TheatersForm(forms.ModelForm):
-    name = forms.CharField(max_length=100, label="Theater Name")
-    locations = forms.CharField(max_length=100, label="Location")
-
-    class Meta:
-        model = TheatersModel
-        fields = ("name", "locations")
+        fields = ("name", "seats", "price")
