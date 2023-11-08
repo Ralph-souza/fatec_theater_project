@@ -95,6 +95,7 @@
 }
 
 .login-content form label {
+    display: block;
     font-family: 'Roboto', sans-serif;
     font-size: 0.9rem;
     color: #205067;
@@ -138,6 +139,336 @@
 }
 
 .login-content button:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+    background-color: #205067;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    border-radius: 10px;
+    margin: 100px 0;
+    padding: 50px;
+}
+
+.profile-content h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #205067;
+}
+
+.profile-content form label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #205067;
+}
+
+.profile-content p {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.profile-content form input {
+    border: none;
+    border-radius: 8px;
+    margin-left: 5px;
+}
+
+.profile-content form input:focus {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.profile-content form select {
+    border: none;
+    border-radius: 8px;
+    margin-left: 5px;
+    padding: 2px;
+}
+
+.profile-content form select:hover {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.profile-content .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+}
+
+.profile-content button {
+    border: 2px solid #205067;
+    border-radius: 50px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: #205067;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: .2s ease-in-out 0s;
+}
+
+.profile-content button:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+    background-color: #205067;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.movies-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    border-radius: 10px;
+    margin: 100px 0;
+    padding: 50px;
+}
+
+.movies-content h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #205067;
+}
+
+.movies-content form label {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #205067;
+}
+
+.movies-content p {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0;
+}
+
+.movies-content form input {
+    justify-content: space-between;
+    border: none;
+    border-radius: 8px;
+    margin-top: 2px;
+}
+
+.movies-content form input:focus {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.movies-content form select {
+    border: none;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.movies-content form select:hover {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.movies-content .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+}
+
+.movies-content button {
+    border: 2px solid #205067;
+    border-radius: 50px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: #205067;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: .2s ease-in-out 0s;
+}
+
+.movies-content button:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+    background-color: #205067;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.rooms-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    border-radius: 10px;
+    margin: 100px 0;
+    padding: 50px;
+}
+
+.rooms-content h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #205067;
+}
+
+.rooms-content form label {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #205067;
+}
+
+.rooms-content p {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0;
+}
+
+.rooms-content form input {
+    justify-content: space-between;
+    border: none;
+    border-radius: 8px;
+    margin-top: 2px;
+}
+
+.rooms-content form input:focus {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.rooms-content form select {
+    border: none;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.rooms-content form select:hover {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.rooms-content .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+}
+
+.rooms-content button {
+    border: 2px solid #205067;
+    border-radius: 50px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color: transparent;
+    color: #205067;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: .2s ease-in-out 0s;
+}
+
+.rooms-content button:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+    background-color: #205067;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.sales-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    border-radius: 10px;
+    margin: 100px 0;
+    padding: 50px;
+}
+
+.sales-content h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #205067;
+}
+
+.sales-content form label {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #205067;
+}
+
+.sales-content p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.sales-content form input {
+    justify-content: space-between;
+    border: none;
+    border-radius: 8px;
+    margin-top: 3px;
+}
+
+.sales-content form input:focus {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.sales-content form select {
+    border: none;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.sales-content form select:hover {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.sales-content .btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+}
+
+.sales-content button {
+    border: 2px solid #205067;
+    border-radius: 50px;
+    padding: 10px 15px;
+    margin-top: 50px;
+    background-color: transparent;
+    color: #205067;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: .2s ease-in-out 0s;
+}
+
+.sales-content button:hover {
     transform: scale(1.1);
     color: #ffffff;
     background-color: #205067;

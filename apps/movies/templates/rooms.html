@@ -6,16 +6,24 @@
         <form method="post">
             {% csrf_token %}
 
-            {{ room_form.as_p }}
-            <label for="room">Select room:</label>
-            <select name="room" id="room">
-                <option value="room_1">Room One</option>
-                <option value="room_2">Room Two</option>
-                <option value="room_3">Room Three</option>
-            </select>
+            {% for field in room_form %}
+                <p>
+                    {{ field.label_tag }}
+                </p>
+                <p>
+                    {{ field }}
+                </p>
+                {% if field.help_text %}
+                    <small>{{ field.help_text }}</small>
+                {% endif %}
+
+                {% for error in field.errors %}
+                    <small>{{ error }}</small>
+                {% endfor %}
+            {% endfor %}
 
             <div class="btn-primary">
-                <button type="submit">Add movie</button>
+                <button type="submit">Add room</button>
             </div>
         </form>
     </div>

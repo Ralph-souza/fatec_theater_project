@@ -27,7 +27,7 @@ def login_view(request):
     context = {}
     user = request.user
     if user.is_authenticated:
-        return redirect("home")
+        return redirect("home.html")
     if request.POST:
         form = AccountAuthenticationForm(request.POST)
         if form.is_valid():
@@ -36,7 +36,7 @@ def login_view(request):
             user = authenticate(email=email, password=password)
             if user:
                 login(request, user)
-                return redirect("home")
+                return redirect("home.html")
     else:
         form = AccountAuthenticationForm()
     context["login_form"] = form

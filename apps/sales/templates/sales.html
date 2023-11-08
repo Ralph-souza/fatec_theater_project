@@ -5,23 +5,26 @@
         <h2>Select movie</h2>
         <form method="post">
             {% csrf_token %}
-            <label for="movie">Choose the movie:</label>
-            <select name="movie" id="movie">
-                {% for movie in movies_list %}
-                    <option value="{{ movie.id }}">{{ movie.title }}</option>
+            {% for field in sales_form %}
+                <p>
+                    {{ field.label_tag }}
+                </p>
+                <p>
+                    {{ field }}
+                </p>
+
+                {% if field.help_text %}
+                    <small>{{ field.help_text }}</small>
+                {% endif %}
+
+                {% for error in field.errors %}
+                    <small>{{ error }}</small>
                 {% endfor %}
-            </select>
-            <label for="room">Choose the room:</label>
-            <select name="room" id="room">
-                {% for room in rooms_list %}
-                    <option value="{{ room.id }}">{{ room.name }}</option>
-                {% endfor %}
-            </select>
-            <label for="price">Price:</label>
-            <input type="number" name="price" id="price">
+            {% endfor %}
 
             <div class="btn-primary">
                 <button type="submit">Complete sale</button>
             </div>
         </form>
+    </div>
 {% endblock %}

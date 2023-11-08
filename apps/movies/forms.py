@@ -8,7 +8,7 @@ class MoviesForm(forms.ModelForm):
     director = forms.CharField(max_length=100, label="Director")
     casting = forms.CharField(max_length=100, label="Casting")
     duration = forms.CharField(max_length=100, label="Duration")
-    rating = forms.IntegerField()
+    rating = forms.IntegerField(label="Rating")
 
     class Meta:
         model = MoviesModel
@@ -16,10 +16,9 @@ class MoviesForm(forms.ModelForm):
 
 
 class RoomsForm(forms.ModelForm):
-    name = forms.CharField(label="Room")
     seats = forms.IntegerField(label="Seats")
-    price = forms.DecimalField(max_digits=10, decimal_places=2)
+    price = forms.DecimalField(max_digits=10, decimal_places=2, label="Price")
 
     class Meta:
         model = RoomsModel
-        fields = ("name", "seats", "price")
+        fields = ("room", "seats", "price")
