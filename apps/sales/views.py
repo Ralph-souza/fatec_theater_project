@@ -11,10 +11,15 @@ def sales_view(request):
         if sales_form.is_valid():
             sales_form.save()
 
-            return redirect('ticket.hmtl')
+            return redirect('ticket')
         
     else:
         sales_form = SalesForm()
     
     context["sales_form"] = sales_form
+
+    if request.method == "GET" and "room" in request.GET:
+        room_id = request.GET.get("room")
+        sales_form.update_movie_choices(room_id)
+
     return render(request, 'sales.html', context)

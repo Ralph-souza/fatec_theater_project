@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
+
+from apps.personnel.choices import RoleChoices
+from apps.personnel.models import ManagerModel, StaffModel
 from apps.account.forms import RegistrationForm, AccountAuthenticationForm, AccountUpdateForm
 
 
@@ -26,8 +29,25 @@ def registration_view(request):
 def login_view(request):
     context = {}
     user = request.user
+    redirect_url = None
+
     if user.is_authenticated:
-        return redirect("home.html")
+        try:
+            manager = ManagerModel.objects.get(email=user.email)
+            if manager.role == RoleChoices.MANAGER:
+                redirect_url = "movies"
+        except ManagerModel.DoesNotExist:
+            pass
+        try:
+            staff = StaffModel.objects.get(email=user.email)
+            if staff.role == RoleChoices.STAFF:
+                redirect_url = "sales"
+        except StaffModel.DoesNotExist:
+            pass
+
+        if redirect_url:
+            return redirect(redirect_url)
+
     if request.POST:
         form = AccountAuthenticationForm(request.POST)
         if form.is_valid():
@@ -36,7 +56,6 @@ def login_view(request):
             user = authenticate(email=email, password=password)
             if user:
                 login(request, user)
-                return redirect("home.html")
     else:
         form = AccountAuthenticationForm()
     context["login_form"] = form

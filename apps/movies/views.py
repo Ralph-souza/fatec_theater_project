@@ -27,11 +27,10 @@ def rooms_view(request):
         room_form = RoomsForm(request.POST)
         if room_form.is_valid():
             room_form.save()
-            return redirect('added_movie.html')
+            return redirect('success')
 
     else:
         room_form = RoomsForm()
 
     context["room_form"] = room_form
     return render(request, 'rooms.html', context)
-
