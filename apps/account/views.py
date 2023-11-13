@@ -35,7 +35,7 @@ def login_view(request):
         try:
             manager = ManagerModel.objects.get(email=user.email)
             if manager.role == RoleChoices.MANAGER:
-                redirect_url = "movies"
+                redirect_url = "rooms"
         except ManagerModel.DoesNotExist:
             pass
         try:

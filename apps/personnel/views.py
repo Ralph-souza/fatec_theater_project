@@ -30,7 +30,7 @@ def profile_view(request):
                 profile.is_admin = is_admin
                 profile.save()
                 if role == "manager":
-                    return redirect("movies")
+                    return redirect("rooms")
                 else:
                     return redirect("sales")
 
