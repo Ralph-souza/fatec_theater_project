@@ -1,13 +1,12 @@
 from django.db import models
 
-from apps.movies.choices import CategoryChoices, RoomsChoices
+from apps.movies.choices import CategoryChoices, RoomsChoices, RoomSeatsChoices
 
 
 class RoomsModel(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
     room = models.CharField(choices=RoomsChoices.choices, max_length=100, blank=False, null=False)
-    seats = models.IntegerField(blank=False, null=False)
-    price = models.DecimalField(max_digits=10, decimal_places=2, blank=False, null=False)
+    seat = models.IntegerField(choices=RoomSeatsChoices.choices, default=40, blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -27,6 +26,7 @@ class MoviesModel(models.Model):
     duration = models.CharField(max_length=100, blank=False, null=False)
     category = models.CharField(choices=CategoryChoices.choices, max_length=50, blank=False, null=False)
     room = models.ForeignKey(RoomsModel, related_name="room_movies", on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10, decimal_places=2, blank=False, null=False)
     rating = models.IntegerField(blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
 

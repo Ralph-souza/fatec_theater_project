@@ -1,34 +1,30 @@
 from django import forms
 
-from apps.movies.models import MoviesModel, RoomsModel
-from apps.sales.models import SalesModel
+from apps.sales.models import MovieSalesModel, SeatSalesModel, TicketModel
 
 
-class SalesForm(forms.ModelForm):
+class MovieSalesForm(forms.ModelForm):
+    sold_room = forms.IntegerField(label="Room")
+    sold_movie = forms.CharField(max_length=100, label="Movie")
+
     class Meta:
-        model = SalesModel
-        fields = ("room", "movie", "price")
-        read_only_fields = ("created_at",)
+        model = MovieSalesModel
+        fields = ("sold_room", "sold_movie")
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if self.is_bound and "room" in self.data:
-            room_id = int(self.data.get("room"))
-            self.fields["movie"].queryset = MoviesModel.objects.filter(room=room_id)
-            room = RoomsModel.objects.get(pk=room_id).first()
-            self.fields["price"].initial = room.price if room else None
 
-        self.fields["price"].widget.attrs["readonly"] = True
+class SeatSalesForm(forms.ModelForm):
+    sold_seat = forms.IntegerField(label="Seat")
 
-    def clean(self):
-        cleaned_data = super().clean()
-        room = cleaned_data.get("room")
-        movie = cleaned_data.get("movie")
+    class Meta:
+        model = SeatSalesModel
+        fields = ("sold_seat",)
 
-        if room and movie:
-            cleaned_data["price"] = movie.price
-        return cleaned_data
 
-    def update_movie_choices(self, room_id):
-        movies = MoviesModel.objects.filter(room=room_id)
-        self.fields["movie"].queryset = movies
+class TicketForm(forms.ModelForm):
+    movie_ticket = forms.IntegerField(label="Movie")
+    seat_ticket = forms.IntegerField(label="Seat")
+
+    class Meta:
+        model = TicketModel
+        fields = ("movie_ticket", "seat_ticket")
+        readonly_fields = ("created_at",)

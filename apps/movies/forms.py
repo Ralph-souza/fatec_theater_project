@@ -4,12 +4,10 @@ from apps.movies.models import MoviesModel, RoomsModel
 
 
 class RoomsForm(forms.ModelForm):
-    seats = forms.IntegerField(label="Seats")
-    price = forms.DecimalField(max_digits=10, decimal_places=2, label="Price")
 
     class Meta:
         model = RoomsModel
-        fields = ("room", "seats", "price")
+        fields = ("room", "seat")
 
 
 class MoviesForm(forms.ModelForm):
@@ -21,4 +19,4 @@ class MoviesForm(forms.ModelForm):
 
     class Meta:
         model = MoviesModel
-        fields = ("title", "director", "casting", "duration", "category", "room", "rating")
+        fields = ("title", "director", "casting", "duration", "category", "room", "price", "rating")
