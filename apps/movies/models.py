@@ -26,7 +26,6 @@ class MoviesModel(models.Model):
     duration = models.CharField(max_length=100, blank=False, null=False)
     category = models.CharField(choices=CategoryChoices.choices, max_length=50, blank=False, null=False)
     room = models.ForeignKey(RoomsModel, related_name="room_movies", on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=10, decimal_places=2, blank=False, null=False)
     rating = models.IntegerField(blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
