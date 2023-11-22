@@ -474,3 +474,19 @@
     background-color: #205067;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
+
+.seat-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+ }
+ 
+ .seat-grid > div {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+ }
+ 
+ .seat-grid > div > label {
+    margin: 5px;
+ }

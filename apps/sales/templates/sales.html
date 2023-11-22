@@ -5,25 +5,9 @@
         <h2>Select movie</h2>
         <form method="post">
             {% csrf_token %}
-            {% for field in sales_form %}
-                <p>
-                    {{ field.label_tag }}
-                </p>
-                <p>
-                    {{ field }}
-                </p>
-
-                {% if field.help_text %}
-                    <small>{{ field.help_text }}</small>
-                {% endif %}
-
-                {% for error in field.errors %}
-                    <small>{{ error }}</small>
-                {% endfor %}
-            {% endfor %}
-
+            {{ sales_form.as_p }}
             <div class="btn-primary">
-                <button type="submit">Next</button>
+                <button type="submit">Buy</button>
             </div>
         </form>
     </div>

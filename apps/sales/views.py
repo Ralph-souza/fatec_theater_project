@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import  get_object_or_404, render, redirect
 
+from apps.sales.models import SalesModel
 from apps.sales.forms import SalesForm
 
 
@@ -19,7 +20,8 @@ def sales_view(request):
             return redirect("ticket")
         
     else:
-        sales_form = SalesForm()
+        sale = SalesModel.objects.first()
+        sales_form = SalesForm(instance=sale)
 
     context["sales_form"] = sales_form
     return render(request, "sales.html", context)

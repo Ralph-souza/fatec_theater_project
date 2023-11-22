@@ -21,3 +21,10 @@ class SalesModel(models.Model):
 
     def __str__(self):
         return f"{self.movie} - {self.room} - {self.price}"
+    
+    def get_available_seats(self):
+        available_seats = set(range(1, self.seat + 1))
+        booked_seats = SalesModel.objects.filter(is_booked=True).values_list("seat", flat=True)
+        available_seats -= set(booked_seats)
+
+        return available_seats
