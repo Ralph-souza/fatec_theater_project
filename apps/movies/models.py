@@ -1,12 +1,11 @@
 from django.db import models
 
-from apps.movies.choices import CategoryChoices, RoomsChoices, RoomSeatsChoices
+from apps.movies.choices import CategoryChoices, RoomsChoices
 
 
 class RoomsModel(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
     room = models.CharField(choices=RoomsChoices.choices, max_length=100, blank=False, null=False)
-    seat = models.IntegerField(choices=RoomSeatsChoices.choices, default=40, blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

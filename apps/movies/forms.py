@@ -7,7 +7,7 @@ class RoomsForm(forms.ModelForm):
 
     class Meta:
         model = RoomsModel
-        fields = ("room", "seat")
+        fields = ("room",)
 
 
 class MoviesForm(forms.ModelForm):
