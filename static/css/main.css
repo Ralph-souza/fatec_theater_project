@@ -420,15 +420,15 @@
 .sales-content p {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0;
+    justify-content: space-between;
+    margin: 15px 0;
 }
 
 .sales-content form input {
     justify-content: space-between;
     border: none;
     border-radius: 8px;
-    margin-top: 3px;
+    margin-top: 2px;
 }
 
 .sales-content form input:focus {
@@ -459,7 +459,7 @@
     border: 2px solid #205067;
     border-radius: 50px;
     padding: 10px 15px;
-    margin-top: 50px;
+    margin-top: 20px;
     background-color: transparent;
     color: #205067;
     font-family: 'Ubuntu', sans-serif;
@@ -474,19 +474,3 @@
     background-color: #205067;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
-
-.seat-grid {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 10px;
- }
- 
- .seat-grid > div {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 10px;
- }
- 
- .seat-grid > div > label {
-    margin: 5px;
- }

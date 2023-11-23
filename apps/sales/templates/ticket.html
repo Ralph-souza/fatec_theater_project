@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Test</h2>
+    <div class="ticket-content">
+        <h2>Movie Ticket</h2>
+        {% csrf_token %}
+        <div class="btn-primary">
+            <a href="{% url 'sale' %}">Buy new ticket</a>
+        </div>
+    </div>
 {% endblock %}
