@@ -410,13 +410,6 @@
     color: #205067;
 }
 
-.success-content form label {
-    display: block;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.9rem;
-    color: #205067;
-}
-
 .success-content p {
     display: flex;
     align-items: center;
@@ -424,30 +417,7 @@
     margin: 0;
 }
 
-.success-content form input {
-    justify-content: space-between;
-    border: none;
-    border-radius: 8px;
-    margin-top: 2px;
-}
-
-.success-content form input:focus {
-    outline: none;
-    border: 2px solid rgba(32, 80, 103, 0.5);
-}
-
-.success-content form select {
-    border: none;
-    border-radius: 8px;
-    padding: 2px;
-}
-
-.success-content form select:hover {
-    outline: none;
-    border: 2px solid rgba(32, 80, 103, 0.5);
-}
-
-.success-content .btn-secundary {
+.success-content .btn-secondary {
     display: flex;
     flex-direction: column;
     border: none;
