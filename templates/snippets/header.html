@@ -1,14 +1,41 @@
-{% if request.user.is_authenticated %}
+<style>
+    .nav-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 180px;
+    }
 
-    <p>
-        Hello, {{ request.user.username }} |
-        <a href="{% url 'account' %}">Account</a> |
-        <a href="{% url 'logout' %}">Logout</a>
-    </p>
+    .nav-menu a {
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        color: #205067;
+        padding: 15px;
+    }
+
+    .nav-menu a:hover {
+        border-radius: 50px;
+        background-color: #205067;
+        color: white;
+    }
+
+
+</style>
+
+<nav class="nav-menu">
+    {% if request.user.is_authenticated %}
+        <p>
+            Hello, {{ request.user.username }} |
+            <a href="{% url 'logout' %}">Logout</a>
+        </p>
     {% else %}
         <p>
-            <a href="{% url 'register' %}">Register</a> |
+            <a class="register" href="{% url 'register' %}">Register</a>
             <a href="{% url 'login' %}">Login</a>
         </p>
-
-{% endif %}
+    {% endif %}
+</nav>

@@ -1,5 +1,6 @@
 from django.shortcuts import  render, redirect
 
+from apps.sales.models import SalesModel
 from apps.sales.choices import RoomSeatsChoices
 from apps.sales.forms import SalesForm
 
@@ -29,3 +30,9 @@ def sales_view(request):
     context["sales_form"] = sales_form
     context["available_seats"] = available_seats
     return render(request, "sales.html", context)
+
+
+def ticket_view(request):
+    ticket = SalesModel.objects.latest("created_at")
+    context = {"ticket": ticket}
+    return render(request, "ticket.html", context)

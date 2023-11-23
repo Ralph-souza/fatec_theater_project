@@ -4,7 +4,14 @@
     <div class="ticket-content">
         <h2>Movie Ticket</h2>
         {% csrf_token %}
-        <div class="btn-primary">
+        <div class="ticket-info">
+            <p><span>Movie:</span>&nbsp; {{ ticket.movie }}</p>
+            <p><span>Room:</span>&nbsp; {{ ticket.room }}</p>
+            <p><span>Seat:</span>&nbsp; {{ ticket.seat }}</p>
+            <p><span>Price:</span>&nbsp; {{ ticket.price }}</p>
+            <p><span>Date:</span>&nbsp; {{ ticket.created_at }}</p>
+        </div>
+        <div class="btn-secondary">
             <a href="{% url 'sale' %}">Buy new ticket</a>
         </div>
     </div>
