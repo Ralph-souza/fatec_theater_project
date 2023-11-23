@@ -33,15 +33,15 @@ def login_view(request):
 
     if user.is_authenticated:
         try:
-            manager = ManagerModel.objects.get(email=user.email)
+            manager = ManagerModel.objects.filter(email=user.email).first()
             if manager.role == RoleChoices.MANAGER:
                 redirect_url = "rooms"
         except ManagerModel.DoesNotExist:
             pass
         try:
-            staff = StaffModel.objects.get(email=user.email)
+            staff = StaffModel.objects.filter(email=user.email).first()
             if staff.role == RoleChoices.STAFF:
-                redirect_url = "sales"
+                redirect_url = "sale"
         except StaffModel.DoesNotExist:
             pass
 
@@ -53,9 +53,21 @@ def login_view(request):
         if form.is_valid():
             email = request.POST["email"]
             password = request.POST["password"]
-            user = authenticate(email=email, password=password)
-            if user:
+            user = authenticate(request, email=email, password=password)
+            if user is not None:
                 login(request, user)
+                try:
+                    manager = ManagerModel.objects.filter(email=user.email).first()
+                    if manager and manager.role == RoleChoices.MANAGER:
+                        return redirect("rooms")
+                except ManagerModel.DoesNotExist:
+                    pass
+                try:
+                    staff = StaffModel.objects.filter(email=user.email).first()
+                    if staff and staff.role == RoleChoices.STAFF:
+                        return redirect("sale")
+                except StaffModel.DoesNotExist:
+                    pass
     else:
         form = AccountAuthenticationForm()
     context["login_form"] = form

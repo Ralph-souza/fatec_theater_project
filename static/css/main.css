@@ -392,6 +392,89 @@
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
 
+.success-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    border-radius: 10px;
+    margin: 100px 0;
+    padding: 50px;
+}
+
+.success-content h2 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #205067;
+}
+
+.success-content form label {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #205067;
+}
+
+.success-content p {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0;
+}
+
+.success-content form input {
+    justify-content: space-between;
+    border: none;
+    border-radius: 8px;
+    margin-top: 2px;
+}
+
+.success-content form input:focus {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.success-content form select {
+    border: none;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.success-content form select:hover {
+    outline: none;
+    border: 2px solid rgba(32, 80, 103, 0.5);
+}
+
+.success-content .btn-secundary {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    background-color: transparent;
+}
+
+.success-content a {
+    border: 2px solid #205067;
+    border-radius: 50px;
+    padding: 10px 15px;
+    margin-top: 20px;
+    background-color: transparent;
+    text-decoration: none;
+    color: #205067;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    transition: .2s ease-in-out 0s;
+}
+
+.success-content a:hover {
+    transform: scale(1.1);
+    color: #ffffff;
+    background-color: #205067;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
+}
+
 .sales-content {
     display: flex;
     flex-direction: column;
