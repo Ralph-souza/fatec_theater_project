@@ -32,7 +32,7 @@ def profile_view(request):
                 if role == "manager":
                     return redirect("rooms")
                 else:
-                    return redirect("sales")
+                    return redirect("sale")
 
         context["profile_form"] = form
     else:
